@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== "production") {
-  require('dotenv').config();
+  require("dotenv").config();
 }
 
 const express = require("express");
@@ -67,7 +67,7 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/reviews", reviewRoutes);
 
 app.get("/", (req, res) => {
-  res.render("temphome");
+  res.render("home");
 });
 
 app.all("*", (req, res, next) => {
