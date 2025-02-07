@@ -3,6 +3,8 @@ const Campground = require("../models/campgrounds");
 const cities = require("./cities");
 const { places, descriptors } = require("./seedHelpers");
 
+//const dbUrl = process.env.DB_URL;
+//"mongodb://localhost:27017/yelp-camp"
 mongoose.connect("mongodb://localhost:27017/yelp-camp");
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
@@ -26,14 +28,14 @@ const seedDB = async () => {
       price,
       images: [
         {
-          url: 'https://res.cloudinary.com/dixwq7csf/image/upload/v1737900610/YelpCamp/hxtk1nqlselmymu8kqpr.jpg',
-          filename: 'YelpCamp/hxtk1nqlselmymu8kqpr',
+          url: "https://res.cloudinary.com/dixwq7csf/image/upload/v1737900610/YelpCamp/hxtk1nqlselmymu8kqpr.jpg",
+          filename: "YelpCamp/hxtk1nqlselmymu8kqpr",
         },
         {
-          url: 'https://res.cloudinary.com/dixwq7csf/image/upload/v1737900611/YelpCamp/jlop5icbnvtxjulykvur.jpg',
-          filename: 'YelpCamp/jlop5icbnvtxjulykvur',
+          url: "https://res.cloudinary.com/dixwq7csf/image/upload/v1737900611/YelpCamp/jlop5icbnvtxjulykvur.jpg",
+          filename: "YelpCamp/jlop5icbnvtxjulykvur",
         },
-      ]
+      ],
     });
     await camp.save();
   }
